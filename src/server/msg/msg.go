@@ -18,6 +18,8 @@ func init() {
 	Processor.Register(&SignIn{})
 	Processor.Register(&State{})
 	Processor.Register(&Up{})
+	Processor.Register(&Right{})
+	Processor.Register(&Left{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -51,5 +53,15 @@ type State struct {
 
 ///测试的向前开车消息
 type Up struct {
+	Direction int
+}
+
+///向左转
+type Left struct {
+	Direction int
+}
+
+///向右转
+type Right struct {
 	Direction int
 }
