@@ -52,12 +52,19 @@ func handleUp(args []interface{})  {
 	///将命令消息广播转发到其他的分组,设置相应的速度
 	log.Debug("%v %v",m.Direction,a)
 
-	///向客户端发送,确认接收的消息
+	///向客户端发送,确认接收的消息,注意此处的Car为指针类型
+	tmp:=a.UserData().(*msg.Car)
+
+	tmp.Up()
+
+	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
 
 	handleBroadcast()
 
 }
 
+
+///@todo 考虑如何在客户端广播,数据
 ///广播
 func handleBroadcast(){
 	log.Debug("%v",len(agents))

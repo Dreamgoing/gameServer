@@ -26,6 +26,8 @@ func init() {
 }
 
 
+
+
 func handleSignUp(args []interface{}) {
 	m:=args[0].(*msg.SignUp)
 
@@ -108,10 +110,15 @@ func handleSignIn(args []interface{})  {
 			///向客户端发送一个成功连接的token
 			///并在内存中创建一个当前用户
 
+			a.SetUserData(&msg.Car{})
+
+			log.Debug("%v",reflect.TypeOf(a.UserData()))
+
 		a.WriteMsg(&msg.State{
 				Name:"signIn",
 			})
 		}
+
 	}
 
 

@@ -16,8 +16,7 @@ type SignInMsg struct {
 	User `json:"SignIn"`
 }
 
-///@todo io交互模型设计
-///@todo go routine 两个线程,一个用来输入,另一个用来读取数据
+
 
 /**
 发送数据包以这种数据包发送

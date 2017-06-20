@@ -20,6 +20,7 @@ func init() {
 	Processor.Register(&Up{})
 	Processor.Register(&Right{})
 	Processor.Register(&Left{})
+	Processor.Register(&Down{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -63,5 +64,9 @@ type Left struct {
 
 ///向右转
 type Right struct {
+	Direction int
+}
+
+type Down struct {
 	Direction int
 }
