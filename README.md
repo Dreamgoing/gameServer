@@ -7,7 +7,7 @@ This gameServer is a server for a car racing game,which client is implemented by
 by golang,and mongodb.
 
 
-##Reference
+## Reference
 [leaf game server](https://github.com/name5566/leaf)
 
 Licensing
