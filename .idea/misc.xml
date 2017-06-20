@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.8.1/libexec" />
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$USER_HOME$/go/src/github.com" />
+        <option value="file://$USER_HOME$/go/src/github.com/name5566" />
+        <option value="file://$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
+</project>
