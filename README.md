@@ -7,6 +7,23 @@ This gameServer is a server for a car racing game,which client is implemented by
 by golang,and mongodb.
 
 
+## Procedure
+
+### Login
+
+Just a simple authorization
+![login](./doc/gameServerLogin.png)
+
+### InitGame
+
+Connect to game server and initialize client game scene
+
+![init](./doc/gameServerGameInit.png)
+
+### Game Synchronization
+
+An efficient synchronization mechanism
+
 ## Reference
 [leaf game server](https://github.com/name5566/leaf)
 
