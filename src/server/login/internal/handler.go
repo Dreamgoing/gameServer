@@ -107,15 +107,27 @@ func handleSignIn(args []interface{})  {
 			///密码错误
 			log.Debug("sign in module user name and password mismatch")
 		}else {
+
 			///向客户端发送一个成功连接的token
 			///并在内存中创建一个当前用户
 
+			if a.UserData()!=nil{
+				a.WriteMsg(&msg.State{
+					Name:"duplicated user",
+				})
+				log.Debug("sign in module duplicate signIn")
+			}
+
+
+			///@todo 初始化车的时候,设置相应的车的编号
 			a.SetUserData(&msg.Car{})
 
-			log.Debug("%v",reflect.TypeOf(a.UserData()))
+			//log.Debug("%v",reflect.TypeOf(a.UserData()))
 
 		a.WriteMsg(&msg.State{
-				Name:"signIn",
+
+			///@note 可以修改为更简单的状态
+				Name:"signIn Successful",
 			})
 		}
 

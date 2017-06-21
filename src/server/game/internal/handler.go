@@ -8,7 +8,9 @@ import (
 
 )
 
-///一切就绪,在game模块中处理Ok消息
+///@todo 考虑如何简化,服务器端的游戏逻辑设计
+
+///当前广播,适用于弱实时性项目,
 
 func init() {
 	//向当前模块(game 模块)注册Ok 消息的消息处理函数 handleOk
@@ -58,6 +60,22 @@ func handleUp(args []interface{})  {
 	tmp.Up()
 
 	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
+
+	handleBroadcast()
+
+}
+
+func handleLeft(args []interface{})  {
+	m:=args[0].(*msg.Left)
+
+	a:=args[1].(gate.Agent)
+
+	tmp:=a.UserData().(*msg.Car)
+	tmp.Left()
+
+	log.Debug("%v %v",m.Direction,a)
+	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
+
 
 	handleBroadcast()
 
