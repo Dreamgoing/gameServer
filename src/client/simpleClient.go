@@ -16,7 +16,12 @@ type SignInMsg struct {
 	User `json:"SignIn"`
 }
 
-
+type Up struct {
+	val float32 `json:"val"`
+}
+type Msg struct {
+	Up
+}
 
 /**
 发送数据包以这种数据包发送
@@ -99,14 +104,14 @@ func login(conn net.Conn,name, password string) bool {
 
 
 func simulation() {
-	conn:=connect("tcp","127.0.0.1:3563")
+	conn:=connect("tcp","10.12.137.159:3563")
 
 	defer conn.Close()
 
 	// Hello 消息（JSON 格式）
 	// 对应游戏服务器 Hello 消息结构体
 	login(conn,"leaf","12345")
-	ret:=make([]byte,50)
+	ret:=make([]byte,80)
 
 	c1:=make(chan []byte)
 	c2:=make(chan string)

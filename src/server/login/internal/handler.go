@@ -1,5 +1,7 @@
 package internal
 
+
+
 import (
 	"reflect"
 	//"github.com/name5566/leaf/db/mongodb"
@@ -13,6 +15,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+var UserID int
 const URL  = "localhost"
 
 func handleMsg(m interface{}, h interface{}) {
@@ -120,15 +123,17 @@ func handleSignIn(args []interface{})  {
 
 
 			///@todo 初始化车的时候,设置相应的车的编号
-			a.SetUserData(&msg.Car{})
+			a.SetUserData(&msg.Car{CarID:UserID})
+			UserID++
+
 
 			//log.Debug("%v",reflect.TypeOf(a.UserData()))
 
-		a.WriteMsg(&msg.State{
 
-			///@note 可以修改为更简单的状态
-				Name:"signIn Successful",
+			a.WriteMsg(&msg.State{
+				Name:"Login Success carID:"+string(UserID-1),
 			})
+
 		}
 
 	}

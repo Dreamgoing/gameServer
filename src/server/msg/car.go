@@ -1,7 +1,7 @@
 package msg
 
 
-///用户的数据,car
+///用户的数据,carw
 type Car struct {
 	CarID int `json:"car_id"`
 	X float32 `json:"x"`
