@@ -104,7 +104,7 @@ func login(conn net.Conn,name, password string) bool {
 
 
 func simulation() {
-	conn:=connect("tcp","10.12.137.159:3563")
+	conn:=connect("tcp","47.93.17.101:3389")
 
 	defer conn.Close()
 
