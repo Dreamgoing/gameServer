@@ -21,6 +21,7 @@ func init() {
 	Processor.Register(&Right{})
 	Processor.Register(&Left{})
 	Processor.Register(&Down{})
+	Processor.Register(&Command{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -29,6 +30,7 @@ func init() {
 type Ok struct {
 	Name string
 }
+
 
 
 
@@ -54,19 +56,35 @@ type State struct {
 
 ///测试的向前开车消息
 type Up struct {
-	Direction int
+	Direction float32
 }
 
 ///向左转
 type Left struct {
-	Direction int
+	Direction float32
 }
 
 ///向右转
 type Right struct {
-	Direction int
+	Direction float32
 }
 
 type Down struct {
-	Direction int
+	Direction float32
+}
+
+
+///定义了具体的命令
+const (
+	UpCom = iota
+	DownCom
+	LeftCom
+	RightCom
+)
+
+type Command struct {
+	CarID int `json:"car_id"`
+	ID int `json:"id"`
+	Cmd int `json:"cmd"`
+	Val float32 `json:"val"`
 }

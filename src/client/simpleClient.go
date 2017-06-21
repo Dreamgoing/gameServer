@@ -147,7 +147,6 @@ func simulation() {
 				return
 			}
 
-			
 		}
 	}
 
@@ -155,10 +154,6 @@ func simulation() {
 
 func main() {
 	simulation()
-
 	//go simulation()
-
-
-
 
 }

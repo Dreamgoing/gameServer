@@ -4,10 +4,14 @@
     <list default="true" id="73235aa1-283c-40ca-9004-599c2b54c084" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/server" afterPath="$PROJECT_DIR$/bin/server" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/game/internal.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/game/internal.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/login/internal.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/login/internal.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/msg.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/msg.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/simpleClient.go" afterPath="$PROJECT_DIR$/src/client/simpleClient.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/game/internal/handler.go" afterPath="$PROJECT_DIR$/src/server/game/internal/handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/login/internal/handler.go" afterPath="$PROJECT_DIR$/src/server/login/internal/handler.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/gate/router.go" afterPath="$PROJECT_DIR$/src/server/gate/router.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/msg/msg.go" afterPath="$PROJECT_DIR$/src/server/msg/msg.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,9 +26,21 @@
       <file leaf-file-name="msg.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/msg/msg.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="-134">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handler.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/server/login/internal/handler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="121" column="38" lean-forward="false" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
+              <folding>
+                <element signature="e#18#205#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,7 +48,7 @@
       <file leaf-file-name="car.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/msg/car.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-149">
               <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
@@ -49,25 +65,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="module.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/login/internal/module.go">
+      <file leaf-file-name="router.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/gate/router.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#18#78#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handler.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/login/internal/handler.go">
+      <file leaf-file-name="module.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/login/internal/module.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1447">
-              <caret line="121" column="38" lean-forward="false" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding>
-                <element signature="e#18#205#0" expanded="true" />
+                <element signature="e#18#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +90,8 @@
       <file leaf-file-name="simpleClient.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/simpleClient.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-900">
+              <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
               <folding>
                 <element signature="e#14#74#0" expanded="true" />
               </folding>
@@ -100,21 +114,11 @@
       <file leaf-file-name="handler.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/game/internal/handler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="90" column="47" lean-forward="false" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+            <state relative-caret-position="404">
+              <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
               <folding>
                 <element signature="e#18#119#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/conf/server.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -150,18 +154,18 @@
         <option value="$PROJECT_DIR$/src/test/mongodb_test.go" />
         <option value="$PROJECT_DIR$/src/client/otherMongodb.go" />
         <option value="$PROJECT_DIR$/src/client/useMongodb.go" />
-        <option value="$PROJECT_DIR$/src/server/gate/router.go" />
         <option value="$PROJECT_DIR$/src/server/game/internal/chanrpc.go" />
-        <option value="$PROJECT_DIR$/src/server/msg/msg.go" />
         <option value="$PROJECT_DIR$/src/server/login/internal/userdata.go" />
         <option value="$PROJECT_DIR$/src/server/login/internal/user.go" />
         <option value="$PROJECT_DIR$/src/server/game/internal/car.go" />
         <option value="$PROJECT_DIR$/src/server/login/external.go" />
         <option value="$PROJECT_DIR$/src/server/msg/car.go" />
-        <option value="$PROJECT_DIR$/src/client/simpleClient.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/server/game/internal/handler.go" />
         <option value="$PROJECT_DIR$/src/server/login/internal/handler.go" />
+        <option value="$PROJECT_DIR$/src/client/simpleClient.go" />
+        <option value="$PROJECT_DIR$/src/server/msg/msg.go" />
+        <option value="$PROJECT_DIR$/src/server/gate/router.go" />
+        <option value="$PROJECT_DIR$/src/server/game/internal/handler.go" />
       </list>
     </option>
   </component>
@@ -222,15 +226,205 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pkg" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="darwin_amd64" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gamedata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leafserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,7 +631,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a" />
     <MESSAGE value="finish server broadcast and update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish server broadcast and update README" />
+    <MESSAGE value="broadcast strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="broadcast strategy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -616,16 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/otherMongodb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-          <folding>
-            <element signature="e#15#76#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/useMongodb.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -692,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/conf/server.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/log/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -720,14 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/gate/router.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -756,26 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/game/internal/chanrpc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding>
-            <element signature="e#18#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/simpleClient.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -787,12 +936,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/login/internal/module.go">
+    <entry file="file://$PROJECT_DIR$/src/server/game/internal/chanrpc.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
-            <element signature="e#18#78#0" expanded="true" />
+            <element signature="e#18#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/conf/server.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/game/internal/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="105" column="22" lean-forward="true" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+          <folding>
+            <element signature="e#18#119#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,19 +972,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/game/internal/handler.go">
+    <entry file="file://$PROJECT_DIR$/src/client/otherMongodb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="90" column="47" lean-forward="false" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+        <state relative-caret-position="-119">
+          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/login/internal/module.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
           <folding>
-            <element signature="e#18#119#0" expanded="true" />
+            <element signature="e#18#78#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/simpleClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/gate/router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/msg/car.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="-149">
           <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
@@ -825,15 +1018,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/msg/msg.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="-134">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/login/internal/handler.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1447">
+        <state relative-caret-position="436">
           <caret line="121" column="38" lean-forward="false" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
           <folding>
             <element signature="e#18#205#0" expanded="true" />

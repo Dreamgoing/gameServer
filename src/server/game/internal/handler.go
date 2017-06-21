@@ -16,6 +16,8 @@ func init() {
 	//向当前模块(game 模块)注册Ok 消息的消息处理函数 handleOk
 	handler(&msg.Ok{},handleOk)
 	handler(&msg.Up{},handleUp)
+	handler(&msg.Left{},handleLeft)
+	handler(&msg.Right{},handleRight)
 }
 
 func handler(m interface{},h interface{})  {
@@ -61,7 +63,10 @@ func handleUp(args []interface{})  {
 
 	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
 
-	handleBroadcast()
+
+
+	///广播车的命令
+	handleBroadcast(&msg.Command{CarID:tmp.CarID,ID:tmp.CarID,Cmd:msg.UpCom,Val:m.Direction})
 
 }
 
@@ -77,17 +82,33 @@ func handleLeft(args []interface{})  {
 	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
 
 
-	handleBroadcast()
+	///广播向左转的命令
+	handleBroadcast(&msg.Command{tmp.CarID,tmp.CarID,msg.LeftCom,m.Direction})
+
+}
+func handleRight(args []interface{})  {
+	m:=args[0].(*msg.Right)
+
+	a:=args[1].(gate.Agent)
+
+	tmp:=a.UserData().(*msg.Car)
+	tmp.Right()
+
+	log.Debug("%v %v",m.Direction,a)
+	log.Debug("%v %v %v",a.RemoteAddr(),tmp.X,tmp.Y)
+
+
+	///广播向左转的命令
+	handleBroadcast(&msg.Command{tmp.CarID,tmp.CarID,msg.RightCom,m.Direction})
 
 }
 
-
 ///@todo 考虑如何在客户端广播,数据
 ///广播
-func handleBroadcast(){
+func handleBroadcast(cmd *msg.Command){
 	log.Debug("%v",len(agents))
 	for a:=range agents{
 		log.Debug("%v\n",a.RemoteAddr().String())
-		a.WriteMsg(&msg.State{Name:"broadcast"})
+		a.WriteMsg(cmd)
 	}
 }

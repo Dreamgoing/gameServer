@@ -19,5 +19,9 @@ func init() {
 
 	msg.Processor.SetRouter(&msg.Up{},game.ChanRPC)
 
+	msg.Processor.SetRouter(&msg.Left{},game.ChanRPC)
+
+	msg.Processor.SetRouter(&msg.Right{},game.ChanRPC)
+
 
 }
