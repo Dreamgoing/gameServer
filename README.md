@@ -29,6 +29,8 @@ An efficient synchronization mechanism
 
 [中文简介](./doc/README_ZH.md)
 
+[网络同步](./doc/网络同步.md)
+
 Licensing
 --------
 
