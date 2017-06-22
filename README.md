@@ -27,6 +27,8 @@ An efficient synchronization mechanism
 ## Reference
 [leaf game server](https://github.com/name5566/leaf)
 
+[中文简介](./doc/README_ZH.md)
+
 Licensing
 --------
 
