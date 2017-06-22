@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73235aa1-283c-40ca-9004-599c2b54c084" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/gameServerStruct.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/simpleClient" afterPath="$PROJECT_DIR$/src/client/simpleClient" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/README_ZH.md" afterPath="$PROJECT_DIR$/doc/README_ZH.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/game/internal/handler.go" afterPath="$PROJECT_DIR$/src/server/game/internal/handler.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
