@@ -12,6 +12,7 @@ by golang,and mongodb.
 ### Login
 
 Just a simple authorization
+
 ![login](./doc/gameServerLogin.png)
 
 ### InitGame
