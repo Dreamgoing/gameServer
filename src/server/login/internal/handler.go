@@ -15,7 +15,18 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+
+///@todo 登出时,修改相关的变量,在内存数据库中,可以考虑使用redis缓存
+
+
+///表示当前是否使用,内存作为数据库
+var useMemoryDB bool = true
+///全局的UserID,表示当前在线的用户
 var UserID int
+///内存数据库,简单的map实现
+var Userdb map[string]string
+
+
 const URL  = "localhost"
 
 func handleMsg(m interface{}, h interface{}) {
@@ -23,15 +34,59 @@ func handleMsg(m interface{}, h interface{}) {
 }
 
 func init() {
-	handleMsg(&msg.SignUp{},handleSignUp)
-	handleMsg(&msg.SignIn{},handleSignIn)
 
+
+	if !useMemoryDB {
+		handleMsg(&msg.SignUp{},handleSignUpDB)
+		handleMsg(&msg.SignIn{},handleSignInDB)
+	}else {
+		handleMsg(&msg.SignIn{},handleSignInMem)
+		handleMsg(&msg.SignUp{},handleSignUpMem)
+	}
+
+
+}
+
+func handleSignInMem(args []interface{})  {
+	m:=args[0].(*msg.SignIn)
+	a:=args[1].(gate.Agent)
+
+	if Userdb[m.Name] == "" {
+		///不存在用户
+		a.WriteMsg(&msg.State{"No exist user"})
+	}else {
+		if Userdb[m.Name]!=m.Password{
+			///用户名密码错误
+			a.WriteMsg(&msg.State{"password error"})
+		}else {
+			a.SetUserData(&msg.Car{CarID:UserID})
+			UserID++
+			a.WriteMsg(&msg.State{"sign in successfully,carID:"+string(UserID-1)})
+		}
+	}
+
+}
+
+func handleSignUpMem(args []interface{})  {
+	m:=args[0].(*msg.SignUp)
+
+	a:=args[1].(gate.Agent)
+
+	if Userdb==nil {
+		Userdb=make(map[string]string)
+	}
+	if Userdb[m.Name]==""{
+		Userdb[m.Name]=m.Password
+		a.WriteMsg(&msg.State{"SignUp successfully"})
+	}else {
+		a.WriteMsg(&msg.State{"this user has exist in DB"})
+	}
 }
 
 ///@todo 考虑,具体的登录流程,
 
 
-func handleSignUp(args []interface{}) {
+func handleSignUpDB(args []interface{}) {
 	m:=args[0].(*msg.SignUp)
 
 
@@ -70,7 +125,7 @@ func handleSignUp(args []interface{}) {
 
 }
 
-func handleSignIn(args []interface{})  {
+func handleSignInDB(args []interface{})  {
 	m:=args[0].(*msg.SignIn)
 
 	///客户端地址

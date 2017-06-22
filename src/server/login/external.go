@@ -6,6 +6,8 @@ import (
 
 var (
 	Module  = new(internal.Module)
+
+	UserDB = internal.Userdb
 	ChanRPC = internal.ChanRPC
 
 )

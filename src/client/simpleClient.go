@@ -16,12 +16,10 @@ type SignInMsg struct {
 	User `json:"SignIn"`
 }
 
-type Up struct {
-	val float32 `json:"val"`
+type SignUpMsg struct {
+	User `json:"SignUp"`
 }
-type Msg struct {
-	Up
-}
+
 
 /**
 发送数据包以这种数据包发送
@@ -102,15 +100,28 @@ func login(conn net.Conn,name, password string) bool {
 
 }
 
+func signUp(conn net.Conn,name,password string)bool  {
+	user:=&SignUpMsg{User{Name:name,Password:password}}
+
+	userdata,err:=json.Marshal(user)
+	if err!=nil {
+		panic(err)
+	}
+	fmt.Println(string(userdata))
+
+	return sendPackage(conn,userdata)
+}
+
 
 func simulation() {
-	conn:=connect("tcp","47.93.17.101:3389")
+	conn:=connect("tcp","127.0.0.1:3389")
 
 	defer conn.Close()
 
 	// Hello 消息（JSON 格式）
 	// 对应游戏服务器 Hello 消息结构体
-	login(conn,"leaf","12345")
+
+
 	ret:=make([]byte,80)
 
 	c1:=make(chan []byte)
@@ -135,6 +146,10 @@ func simulation() {
 			c2<-in
 		}
 	}()
+	var name string
+	var password string
+
+	fmt.Println("welcom client! press 'h' to get help")
 	for true{
 		select {
 		case data:=<-c1:
@@ -150,6 +165,32 @@ func simulation() {
 				///退出
 				fmt.Println("client quit")
 				return
+			}else if op==string("j"){
+				fmt.Println("Sign Up:")
+				fmt.Print("name: ")
+				fmt.Scanf("%s",&name)
+				fmt.Print("password: ")
+				fmt.Scanf("%s",&password)
+				signUp(conn,name,password)
+			}else if op==string("l"){
+				fmt.Println("Sign In:")
+				fmt.Print("name: ")
+				fmt.Scanf("%s",&name)
+				fmt.Print("password: ")
+				fmt.Scanf("%s",&password)
+				login(conn,name,password)
+			}else if op==string("h"){
+				fmt.Println("command:")
+				fmt.Println("w a s d is direction command")
+				fmt.Println("j is sign up command")
+				fmt.Println("l is login command")
+				fmt.Println("o is administer login")
+				fmt.Println("q is quit command")
+
+			}else if op == string("o") {
+				signUp(conn,"wang","123")
+				login(conn,"wang","123")
+
 			}
 
 		}
