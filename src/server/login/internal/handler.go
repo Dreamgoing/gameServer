@@ -68,7 +68,12 @@ func handleSignInMem(args []interface{})  {
 }
 
 func handleSignUpMem(args []interface{})  {
+
+
+	///Comma-ok断言
+
 	m:=args[0].(*msg.SignUp)
+
 
 	a:=args[1].(gate.Agent)
 
@@ -180,6 +185,7 @@ func handleSignInDB(args []interface{})  {
 			///@todo 初始化车的时候,设置相应的车的编号
 			a.SetUserData(&msg.Car{CarID:UserID})
 			UserID++
+
 
 
 			//log.Debug("%v",reflect.TypeOf(a.UserData()))
