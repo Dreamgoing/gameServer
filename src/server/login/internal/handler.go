@@ -34,8 +34,6 @@ func handleMsg(m interface{}, h interface{}) {
 }
 
 func init() {
-
-
 	if !useMemoryDB {
 		handleMsg(&msg.SignUp{},handleSignUpDB)
 		handleMsg(&msg.SignIn{},handleSignInDB)
@@ -44,6 +42,8 @@ func init() {
 		handleMsg(&msg.SignUp{},handleSignUpMem)
 	}
 
+	///保持用户的数据
+	handleMsg(&msg.UpLoad{},handleUploadDB)
 
 }
 
@@ -200,4 +200,10 @@ func handleSignInDB(args []interface{})  {
 	}
 
 ///hello
+}
+
+
+///用来同步更新用户的数据
+func handleUploadDB(args []interface{}) {
+
 }

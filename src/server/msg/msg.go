@@ -22,6 +22,7 @@ func init() {
 	Processor.Register(&Left{})
 	Processor.Register(&Down{})
 	Processor.Register(&Command{})
+	Processor.Register(&UpLoad{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -37,6 +38,7 @@ type Ok struct {
 
 ///注册消息结构
 type SignUp struct {
+
 	Name string `json:"name"`
 	Password string `json:"password"`
 }
@@ -47,9 +49,13 @@ type SignIn struct {
 	Password string `json:"password"`
 }
 
+///用来同步用户的个人资料
+type UpLoad struct {
+	ID int `json:"id"`
+	Data UserData `json:"data"`
+}
 
-
-///状态消息(向服务器发送)
+///状态消息(向客户端发送)
 type State struct {
 	Name string `json:"name"`
 }

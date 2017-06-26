@@ -23,5 +23,8 @@ func init() {
 
 	msg.Processor.SetRouter(&msg.Right{},game.ChanRPC)
 
+	///同步用户个人信息在login的个人模块中
+	msg.Processor.SetRouter(&msg.UpLoad{},login.ChanRPC)
+
 
 }
