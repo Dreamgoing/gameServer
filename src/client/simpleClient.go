@@ -41,6 +41,17 @@ func sendPackage(conn net.Conn, jsonData []byte) bool {
 
 }
 
+func sendAdmin(conn net.Conn)  {
+	adm:=[]byte(`{
+			"Admin":{
+				"Name":"Wang"
+			}
+		}`)
+	m:=make([]byte,2+len(adm))
+	binary.BigEndian.PutUint16(m,uint16(len(adm)))
+	copy(m[2:],adm)
+	conn.Write(m)
+}
 func sendUp(conn net.Conn)  {
 	up:=[]byte(`{
 			"Up": {
@@ -114,7 +125,7 @@ func signUp(conn net.Conn,name,password string)bool  {
 
 
 func simulation() {
-	conn:=connect("tcp","47.93.17.101:3389")
+	conn:=connect("tcp","10.12.137.186:3389")
 
 	defer conn.Close()
 
@@ -184,14 +195,17 @@ func simulation() {
 				fmt.Println("w a s d is direction command")
 				fmt.Println("j is sign up command")
 				fmt.Println("l is login command")
-				fmt.Println("o is administer login")
+				fmt.Println("o is adminUser login")
 				fmt.Println("q is quit command")
+				fmt.Println("m is show all online user")
 
 			}else if op == string("o") {
 				signUp(conn,"wang","123")
 
-				go login(conn,"wang","123")
+				login(conn,"wang","123")
 
+			}else if op==string("m"){
+				sendAdmin(conn)
 			}
 
 		}

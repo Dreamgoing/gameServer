@@ -26,5 +26,9 @@ func init() {
 	///同步用户个人信息在login的个人模块中
 	msg.Processor.SetRouter(&msg.UpLoad{},login.ChanRPC)
 
+	///联网模式匹配多人消息处理在game模块中
+	msg.Processor.SetRouter(&msg.Match{},game.ChanRPC)
 
+	///管理员模式,暂时在游戏主逻辑,game.ChanRPC中处理
+	msg.Processor.SetRouter(&msg.Admin{},game.ChanRPC)
 }

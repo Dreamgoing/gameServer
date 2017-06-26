@@ -16,6 +16,7 @@ import (
 )
 
 
+///@todo 好友功能,聊天功能
 ///@todo 登出时,修改相关的变量,在内存数据库中,可以考虑使用redis缓存
 
 
@@ -70,19 +71,23 @@ func handleSignInMem(args []interface{})  {
 func handleSignUpMem(args []interface{})  {
 
 
+
 	///Comma-ok断言
 
 	m:=args[0].(*msg.SignUp)
 
-
 	a:=args[1].(gate.Agent)
+
+
+	log.Debug("%s %v",a.RemoteAddr(),m)
 
 	if Userdb==nil {
 		Userdb=make(map[string]string)
 	}
 	if Userdb[m.Name]==""{
 		Userdb[m.Name]=m.Password
-		a.WriteMsg(&msg.State{"SignUp successfully"})
+		//a.WriteMsg(&msg.State{"SignUp successfully"})
+		a.WriteMsg(&msg.SignUp{m.Name,m.Password})
 	}else {
 		a.WriteMsg(&msg.State{"this user has exist in DB"})
 	}

@@ -23,6 +23,8 @@ func init() {
 	Processor.Register(&Down{})
 	Processor.Register(&Command{})
 	Processor.Register(&UpLoad{})
+	Processor.Register(&Match{})
+	Processor.Register(&Admin{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -32,9 +34,9 @@ type Ok struct {
 	Name string
 }
 
-
-
-
+type Admin struct {
+	Name string `json:"name"`
+}
 
 ///注册消息结构
 type SignUp struct {
@@ -58,6 +60,14 @@ type UpLoad struct {
 ///状态消息(向客户端发送)
 type State struct {
 	Name string `json:"name"`
+}
+
+
+///匹配消息
+type Match struct {
+	///匹配名
+	Name string `json:"name"`
+	Num int `json:"num"`
 }
 
 ///测试的向前开车消息

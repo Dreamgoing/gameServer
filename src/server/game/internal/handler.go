@@ -14,12 +14,16 @@ import (
 
 ///当前广播,适用于弱实时性项目,
 
+///
+
 func init() {
 	//向当前模块(game 模块)注册Ok 消息的消息处理函数 handleOk
 	handler(&msg.Ok{},handleOk)
 	handler(&msg.Up{},handleUp)
 	handler(&msg.Left{},handleLeft)
 	handler(&msg.Right{},handleRight)
+	handler(&msg.Match{},handleMatch)
+	handler(&msg.Admin{},handleAdmin)
 }
 
 func handler(m interface{},h interface{})  {
@@ -105,6 +109,10 @@ func handleRight(args []interface{})  {
 
 }
 
+func handleMatch(args []interface{})  {
+
+}
+
 ///@todo 考虑如何在客户端广播,数据
 ///广播
 func handleBroadcast(cmd *msg.Command){
@@ -113,4 +121,17 @@ func handleBroadcast(cmd *msg.Command){
 		log.Debug("%v\n",a.RemoteAddr().String())
 		a.WriteMsg(cmd)
 	}
+}
+
+func handleAdmin(args []interface{})  {
+	if val,ok:=args[0].(*msg.Admin);ok{
+		log.Debug("Admin login: %s",val.Name)
+	}
+	if a,ok:=args[1].(gate.Agent);ok{
+		log.Debug("Admin ip: %v\n",a.RemoteAddr().String())
+		for it:=range agents {
+			log.Debug("%v\n",it.RemoteAddr().String())
+		}
+	}
+
 }
