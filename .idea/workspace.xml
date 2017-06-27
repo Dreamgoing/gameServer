@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73235aa1-283c-40ca-9004-599c2b54c084" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/server" afterPath="$PROJECT_DIR$/bin/server" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/game.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/game.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/game/internal.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/game/internal.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate/internal.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/gate/internal.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/login.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/login.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/login/internal.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/login/internal.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/darwin_amd64/server/msg.a" afterPath="$PROJECT_DIR$/pkg/darwin_amd64/server/msg.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/server.json" afterPath="$PROJECT_DIR$/bin/conf/server.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/simpleClient.go" afterPath="$PROJECT_DIR$/src/client/simpleClient.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/game/internal/handler.go" afterPath="$PROJECT_DIR$/src/server/game/internal/handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/gate/router.go" afterPath="$PROJECT_DIR$/src/server/gate/router.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/login/external.go" afterPath="$PROJECT_DIR$/src/server/login/external.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/login/internal/handler.go" afterPath="$PROJECT_DIR$/src/server/login/internal/handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/msg/UserData.go" afterPath="$PROJECT_DIR$/src/server/msg/UserData.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/msg/msg.go" afterPath="$PROJECT_DIR$/src/server/msg/msg.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="125">
-                <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <first_editor relative-caret-position="140">
+                <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -720,7 +703,8 @@
     <MESSAGE value="broadcast strategy" />
     <MESSAGE value="use memoryDB" />
     <MESSAGE value="add gameServer structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gameServer structure" />
+    <MESSAGE value="Add Document" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Document" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1124,8 +1108,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="125">
-            <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <first_editor relative-caret-position="140">
+            <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
             <folding />
           </first_editor>
           <second_editor />
