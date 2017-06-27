@@ -34,4 +34,7 @@ func init() {
 
 	///用户向其他用户发送窗口消息
 	msg.Processor.SetRouter(&msg.UserMsg{},game.ChanRPC)
+
+	///用户向服务器发送确认参加匹配模式
+	msg.Processor.SetRouter(&msg.MatchMode{},game.ChanRPC)
 }
