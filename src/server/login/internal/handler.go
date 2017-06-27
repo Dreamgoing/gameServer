@@ -18,15 +18,19 @@ import (
 
 ///@todo 好友功能,聊天功能
 ///@todo 登出时,修改相关的变量,在内存数据库中,可以考虑使用redis缓存
+///@todo 思考登录登出游戏流程
 
 
 ///表示当前是否使用,内存作为数据库
 var useMemoryDB bool = true
 ///全局的UserID,表示当前在线的用户
 var UserID int
+
 ///内存数据库,简单的map实现
 var Userdb map[string]string
 
+///内存用户数据存储,简单的map实现
+var UsersData map[string]msg.UserData
 
 const URL  = "localhost"
 
@@ -54,15 +58,15 @@ func handleSignInMem(args []interface{})  {
 
 	if Userdb[m.Name] == "" {
 		///不存在用户
-		a.WriteMsg(&msg.State{"No exist user"})
+		a.WriteMsg(&msg.State{msg.Login_noexist})
 	}else {
 		if Userdb[m.Name]!=m.Password{
 			///用户名密码错误
-			a.WriteMsg(&msg.State{"password error"})
+			a.WriteMsg(&msg.State{msg.Login_mismatch})
 		}else {
 			a.SetUserData(&msg.Car{CarID:UserID})
 			UserID++
-			a.WriteMsg(&msg.State{"sign in successfully,carID:"+string(UserID-1)})
+			a.WriteMsg(&msg.State{msg.Login_success})
 		}
 	}
 
@@ -89,7 +93,7 @@ func handleSignUpMem(args []interface{})  {
 		//a.WriteMsg(&msg.State{"SignUp successfully"})
 		a.WriteMsg(&msg.SignUp{m.Name,m.Password})
 	}else {
-		a.WriteMsg(&msg.State{"this user has exist in DB"})
+		a.WriteMsg(&msg.State{msg.Sigin_duplicate})
 	}
 }
 
@@ -180,9 +184,7 @@ func handleSignInDB(args []interface{})  {
 			///并在内存中创建一个当前用户
 
 			if a.UserData()!=nil{
-				a.WriteMsg(&msg.State{
-					Name:"duplicated user",
-				})
+				a.WriteMsg(&msg.State{msg.Sigin_duplicate})
 				log.Debug("sign in module duplicate signIn")
 			}
 
@@ -195,10 +197,7 @@ func handleSignInDB(args []interface{})  {
 
 			//log.Debug("%v",reflect.TypeOf(a.UserData()))
 
-
-			a.WriteMsg(&msg.State{
-				Name:"Login Success carID:"+string(UserID-1),
-			})
+			a.WriteMsg(&msg.State{msg.Sigin_duplicate})
 
 		}
 

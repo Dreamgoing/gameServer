@@ -113,7 +113,6 @@ func handleMatch(args []interface{})  {
 
 }
 
-///@todo 考虑如何在客户端广播,数据
 ///广播
 func handleBroadcast(cmd *msg.Command){
 	log.Debug("%v",len(agents))

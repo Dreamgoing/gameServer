@@ -57,9 +57,20 @@ type UpLoad struct {
 	Data UserData `json:"data"`
 }
 
-///状态消息(向客户端发送)
+
+
+///状态消息(向客户端发送)的状态信息
+const (
+	Login_success = iota
+	Login_mismatch
+	Login_noexist
+	Login_duplicate
+
+	Signin_success
+	Sigin_duplicate
+)
 type State struct {
-	Name string `json:"name"`
+	Kind int `json:"kind"`
 }
 
 

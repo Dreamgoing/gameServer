@@ -6,6 +6,8 @@ import (
 
 ///设置gate.Agent到空struct的映射
 var agents=make(map[gate.Agent]struct{})
+var users=make(map[string]gate.Agent)
+
 
 func init() {
 	skeleton.RegisterChanRPC("NewAgent", rpcNewAgent)
@@ -15,6 +17,8 @@ func init() {
 func rpcNewAgent(args []interface{}) {
 	a := args[0].(gate.Agent)
 	agents[a]= struct{}{}
+
+
 
 }
 
