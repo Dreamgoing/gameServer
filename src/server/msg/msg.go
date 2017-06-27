@@ -25,6 +25,7 @@ func init() {
 	Processor.Register(&UpLoad{})
 	Processor.Register(&Match{})
 	Processor.Register(&Admin{})
+	Processor.Register(&UserMsg{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -55,6 +56,11 @@ type SignIn struct {
 type UpLoad struct {
 	ID int `json:"id"`
 	Data UserData `json:"data"`
+}
+
+type MatchMode struct {
+	
+	Name string `json:"name"` ///参加匹配的玩家名
 }
 
 
@@ -100,6 +106,11 @@ type Down struct {
 	Direction float32
 }
 
+type UserMsg struct {
+	Src string `json:"src"`
+	Dst string `json:"dst"`
+	Context string `json:"context"`
+}
 
 ///定义了具体的命令
 const (

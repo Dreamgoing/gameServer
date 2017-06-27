@@ -6,6 +6,7 @@ import (
 	"github.com/name5566/leaf/gate"
 	"github.com/name5566/leaf/log"
 
+	"server/login"
 )
 
 ///@todo 考虑如何简化,服务器端的游戏逻辑设计
@@ -13,6 +14,8 @@ import (
 ///@todo 客户端和服务器端,设置计时器,和超时等功能
 
 ///当前广播,适用于弱实时性项目,
+
+///完成匹配记时
 
 ///
 
@@ -110,6 +113,13 @@ func handleRight(args []interface{})  {
 }
 
 func handleMatch(args []interface{})  {
+	///处理当前匹配多人模式的消息
+
+	m,ok:=args[0].(msg.Match)
+	if ok {
+		log.Debug("multi-player match game %v",m)
+	}
+	///从当前匹配队列中,找到满足条件的匹配
 
 }
 
@@ -132,5 +142,35 @@ func handleAdmin(args []interface{})  {
 			log.Debug("%v\n",it.RemoteAddr().String())
 		}
 	}
+
+}
+
+///用来处理不同用户之间的聊天功能
+func handleUserMsg(args []interface{})  {
+
+	m,ok:=args[0].(*msg.UserMsg)
+	if ok{
+		log.Debug("user message %v",m)
+	}
+
+
+	a, ok := args[1].(gate.Agent)
+	if ok{
+		log.Debug("send from: %v",a.RemoteAddr().String())
+	}
+
+	///a发送消息到b
+	bname:=m.Dst
+
+	///@todo 对于这里的判断要进行用户当前是否在线处理
+	bgate:=login.UserAgent[bname]
+
+	if bgate==nil {
+		///没找到对应用户的gate,进行错误处理
+
+	}
+
+	///转发给用户b
+	bgate.WriteMsg(&msg.UserMsg{m.Src,m.Dst,m.Context})
 
 }

@@ -6,26 +6,18 @@ A game server based on [Leaf framework](https://github.com/name5566/leaf).
 This gameServer is a server for a car racing game,which client is implemented by Unity3D&C#,gameServer is implemented 
 by golang,and mongodb.
 
+## Document
 
-## Procedure
-
-### Login
-
-Just a simple authorization
-
-![login](./doc/gameServerLogin.png)
-
-### InitGame
-
-Connect to game server and initialize client game scene
-
-![init](./doc/gameServerGameInit.png)
+[中文文档](./README_CN.md)
 
 ### Game Synchronization
 
 An efficient synchronization mechanism
 
 ## Reference
+
+[中文文档](./README_CN.md)
+
 [leaf game server](https://github.com/name5566/leaf)
 
 [中文简介](./doc/README_ZH.md)

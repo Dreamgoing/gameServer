@@ -9,6 +9,7 @@ var (
 
 	UserDB = internal.Userdb
 	ChanRPC = internal.ChanRPC
+	UserAgent = internal.UserAgent
 
 )
 

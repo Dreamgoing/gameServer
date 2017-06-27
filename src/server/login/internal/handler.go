@@ -30,7 +30,9 @@ var UserID int
 var Userdb map[string]string
 
 ///内存用户数据存储,简单的map实现
-var UsersData map[string]msg.UserData
+var UserInfo map[string]msg.UserData
+
+var UserAgent map[string]gate.Agent
 
 const URL  = "localhost"
 
@@ -64,7 +66,12 @@ func handleSignInMem(args []interface{})  {
 			///用户名密码错误
 			a.WriteMsg(&msg.State{msg.Login_mismatch})
 		}else {
+
+			///登录成功后,使用户名和用户数据相关联.
 			a.SetUserData(&msg.Car{CarID:UserID})
+
+			///建立用户名与agent的映射
+			UserAgent[m.Name] = a
 			UserID++
 			a.WriteMsg(&msg.State{msg.Login_success})
 		}

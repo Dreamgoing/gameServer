@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 )
 
+///@todo 考虑如何设置返回值为err
 type User struct {
 	Name string `json:"name"`
 	Password string `json:"password"`
@@ -18,6 +19,17 @@ type SignInMsg struct {
 
 type SignUpMsg struct {
 	User `json:"SignUp"`
+}
+
+///一个用户向另一个用户转发的消息
+type UserMsg struct {
+	MsgPack InterMsg `json:"UserMsg"`
+}
+
+type InterMsg struct {
+	Src string `json:"src"`
+	Dst string `json:"dst"`
+	Context string `json:"context"`
 }
 
 
@@ -52,6 +64,8 @@ func sendAdmin(conn net.Conn)  {
 	copy(m[2:],adm)
 	conn.Write(m)
 }
+
+
 func sendUp(conn net.Conn)  {
 	up:=[]byte(`{
 			"Up": {
@@ -109,6 +123,20 @@ func login(conn net.Conn,name, password string) bool {
 
 	return sendPackage(conn,userdata)
 
+}
+
+
+///向一个特定的用户发送,私信暂未支持加密功能
+func sendMsg(conn net.Conn,src string,dst string,context string) bool {
+	tmpMsg:=&UserMsg{InterMsg{src,dst,context}}
+
+	tmpdata,err:=json.Marshal(tmpMsg)
+	if err!=nil {
+		panic(err)
+	}
+	fmt.Println(string(tmpdata))
+
+	return sendPackage(conn,tmpdata)
 }
 
 func signUp(conn net.Conn,name,password string)bool  {
@@ -206,6 +234,8 @@ func simulation() {
 
 			}else if op==string("m"){
 				sendAdmin(conn)
+			}else if op==string("n"){
+				fmt.Println("send msg to an existed user")
 			}
 
 		}

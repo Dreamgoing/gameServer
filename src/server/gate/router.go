@@ -31,4 +31,7 @@ func init() {
 
 	///管理员模式,暂时在游戏主逻辑,game.ChanRPC中处理
 	msg.Processor.SetRouter(&msg.Admin{},game.ChanRPC)
+
+	///用户向其他用户发送窗口消息
+	msg.Processor.SetRouter(&msg.UserMsg{},game.ChanRPC)
 }
