@@ -3,6 +3,7 @@ package internal
 import (
 	"github.com/name5566/leaf/module"
 	"server/base"
+	"github.com/name5566/leaf/gate"
 )
 
 var (
@@ -16,6 +17,7 @@ type Module struct {
 
 func (m *Module) OnInit() {
 	m.Skeleton = skeleton
+	UserAgent=make(map[string]gate.Agent)
 }
 
 func (m *Module) OnDestroy() {

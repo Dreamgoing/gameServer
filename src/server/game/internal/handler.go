@@ -13,11 +13,22 @@ import (
 
 ///@todo 客户端和服务器端,设置计时器,和超时等功能
 
+///@todo 考虑如何实现真正的房间匹配并发操作
+
+///@todo 需要实现严格的服务器状态流程校验
+
 ///当前广播,适用于弱实时性项目,
 
 ///完成匹配记时
 
 ///
+
+type matchInfo struct {
+	matchQueue []msg.Match `json:"matchInfo"`
+}
+
+var matchMsg matchInfo
+
 
 func init() {
 	//向当前模块(game 模块)注册Ok 消息的消息处理函数 handleOk
@@ -121,8 +132,21 @@ func handleMatch(args []interface{})  {
 		log.Debug("multi-player match game %v",m)
 	}
 
+	///添加到匹配的队列中去
 
-	///从当前匹配队列中,找到满足条件的匹配
+	///存放匹配信息
+	matchMsg.matchQueue = append(matchMsg.matchQueue,m)
+
+	///如果当前在匹配队列的人数大于等于2
+	if len(matchMsg.matchQueue)>=2 {
+		///向其他的用户发送广播
+		for _,x:=range matchMsg.matchQueue{
+			tmp:=login.UserAgent[x.Name]
+			///向客户端发送匹配数组信息
+			tmp.WriteMsg(&matchMsg)
+
+		}
+	}
 
 }
 

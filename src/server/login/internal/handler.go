@@ -70,6 +70,8 @@ func handleSignInMem(args []interface{})  {
 			///登录成功后,使用户名和用户数据相关联.
 			a.SetUserData(&msg.Car{CarID:UserID})
 
+
+			///@bug nil map
 			///建立用户名与agent的映射
 			UserAgent[m.Name] = a
 			UserID++
