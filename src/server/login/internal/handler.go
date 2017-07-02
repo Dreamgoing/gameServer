@@ -97,10 +97,10 @@ func handleSignUpMem(args []interface{})  {
 	}
 	if Userdb[m.Name]==""{
 		Userdb[m.Name]=m.Password
-		//a.WriteMsg(&msg.State{"SignUp successfully"})
-		a.WriteMsg(&msg.SignUp{m.Name,m.Password})
+		//a.WriteMsg(&msg.SignUp{"ok","123"})
+		a.WriteMsg(&msg.State{msg.SignUp_success})
 	}else {
-		a.WriteMsg(&msg.State{msg.Sigin_duplicate})
+		a.WriteMsg(&msg.State{msg.SignUp_duplicate})
 	}
 }
 
@@ -191,7 +191,7 @@ func handleSignInDB(args []interface{})  {
 			///并在内存中创建一个当前用户
 
 			if a.UserData()!=nil{
-				a.WriteMsg(&msg.State{msg.Sigin_duplicate})
+				a.WriteMsg(&msg.State{msg.Login_duplicate})
 				log.Debug("sign in module duplicate signIn")
 			}
 
@@ -204,7 +204,7 @@ func handleSignInDB(args []interface{})  {
 
 			//log.Debug("%v",reflect.TypeOf(a.UserData()))
 
-			a.WriteMsg(&msg.State{msg.Sigin_duplicate})
+			a.WriteMsg(&msg.State{msg.Login_duplicate})
 
 		}
 

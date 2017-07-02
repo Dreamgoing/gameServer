@@ -27,6 +27,7 @@ func init() {
 	Processor.Register(&Admin{})
 	Processor.Register(&UserMsg{})
 	Processor.Register(&MatchMode{})
+	Processor.Register(&Order{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -72,8 +73,8 @@ const (
 	Login_noexist
 	Login_duplicate
 
-	Signin_success
-	Sigin_duplicate
+	SignUp_success
+	SignUp_duplicate
 )
 type State struct {
 	Kind int `json:"kind"`
@@ -84,7 +85,12 @@ type State struct {
 type Match struct {
 	///匹配名
 	Name string `json:"name"`
-	Num int `json:"num"`
+	Car int `json:"car"`
+}
+
+type Order struct {
+	Name string `json:"name"`
+	Val string `json:"val"`
 }
 
 ///测试的向前开车消息

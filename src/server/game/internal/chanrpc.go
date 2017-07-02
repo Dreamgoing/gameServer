@@ -18,8 +18,6 @@ func rpcNewAgent(args []interface{}) {
 	a := args[0].(gate.Agent)
 	agents[a]= struct{}{}
 
-
-
 }
 
 func rpcCloseAgent(args []interface{}) {

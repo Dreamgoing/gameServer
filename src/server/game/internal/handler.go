@@ -27,6 +27,7 @@ func init() {
 	handler(&msg.Right{},handleRight)
 	handler(&msg.Match{},handleMatch)
 	handler(&msg.Admin{},handleAdmin)
+	handler(&msg.Order{},handleOrder)
 }
 
 func handler(m interface{},h interface{})  {
@@ -119,18 +120,31 @@ func handleMatch(args []interface{})  {
 	if ok {
 		log.Debug("multi-player match game %v",m)
 	}
+
+
 	///从当前匹配队列中,找到满足条件的匹配
 
 }
 
+func handleOrder(args []interface{})  {
+	m,ok:=args[0].(msg.Order)
+	if ok {
+		log.Debug("Order ")
+	}
+
+	///广播消息
+	handleBroadcast(m)
+}
+
 ///广播
-func handleBroadcast(cmd *msg.Command){
+func handleBroadcast(cmd interface{}){
 	log.Debug("%v",len(agents))
 	for a:=range agents{
 		log.Debug("%v\n",a.RemoteAddr().String())
 		a.WriteMsg(cmd)
 	}
 }
+
 
 func handleAdmin(args []interface{})  {
 	if val,ok:=args[0].(*msg.Admin);ok{
@@ -144,6 +158,7 @@ func handleAdmin(args []interface{})  {
 	}
 
 }
+
 
 ///用来处理不同用户之间的聊天功能
 func handleUserMsg(args []interface{})  {

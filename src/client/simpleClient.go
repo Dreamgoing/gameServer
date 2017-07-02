@@ -118,7 +118,7 @@ func login(conn net.Conn,name, password string) bool {
 		panic(err)
 	}
 
-	fmt.Println(string(userdata))
+	//fmt.Println(string(userdata))
 
 
 	return sendPackage(conn,userdata)
@@ -134,7 +134,7 @@ func sendMsg(conn net.Conn,src string,dst string,context string) bool {
 	if err!=nil {
 		panic(err)
 	}
-	fmt.Println(string(tmpdata))
+	//fmt.Println(string(tmpdata))
 
 	return sendPackage(conn,tmpdata)
 }
@@ -146,14 +146,14 @@ func signUp(conn net.Conn,name,password string)bool  {
 	if err!=nil {
 		panic(err)
 	}
-	fmt.Println(string(userdata))
+	//fmt.Println(string(userdata))
 
 	return sendPackage(conn,userdata)
 }
 
 
 func simulation() {
-	conn:=connect("tcp","10.12.137.186:3389")
+	conn:=connect("tcp","127.0.0.1:3389")
 
 	defer conn.Close()
 
@@ -192,7 +192,7 @@ func simulation() {
 	for true{
 		select {
 		case data:=<-c1:
-			fmt.Printf("%v\n",string(data))
+			fmt.Printf("Read from Server: %v \n",string(data))
 		case op:=<-c2:
 			if op==string("w"){
 				sendUp(conn)

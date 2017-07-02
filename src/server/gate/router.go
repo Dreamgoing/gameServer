@@ -37,4 +37,6 @@ func init() {
 
 	///用户向服务器发送确认参加匹配模式
 	msg.Processor.SetRouter(&msg.MatchMode{},game.ChanRPC)
+
+	msg.Processor.SetRouter(&msg.Order{},game.ChanRPC)
 }
