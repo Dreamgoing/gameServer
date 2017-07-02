@@ -32,7 +32,21 @@ type InterMsg struct {
 	Context string `json:"context"`
 }
 
+type MatchMsg struct {
+	Match `json:"Match"`
+} 
+type Match struct {
+	Name string `json:"name"`
+	Car int `json:"car"`
+}
 
+type OrderMsg struct {
+	Order `json:"Order"`
+}
+type Order struct {
+	Name string `json:"name"`
+	Val int `json:"val"`
+}
 /**
 发送数据包以这种数据包发送
 --------------
@@ -125,6 +139,32 @@ func login(conn net.Conn,name, password string) bool {
 
 }
 
+func match(conn net.Conn,name string,car int) bool {
+	
+	userMatch:=&MatchMsg{Match{name,car}}
+
+
+	data,err:=json.Marshal(userMatch)
+
+	//fmt.Println(data)
+	if err!=nil {
+		panic(err)
+	}
+	return sendPackage(conn,data)
+	
+}
+
+func order(conn net.Conn, name string, val int) bool {
+	userOrder:=&OrderMsg{Order{name,val}}
+
+	data,err:=json.Marshal(userOrder)
+
+	//fmt.Println(data)
+	if err != nil {
+		panic(err)
+	}
+	return sendPackage(conn,data)
+}
 
 ///向一个特定的用户发送,私信暂未支持加密功能
 func sendMsg(conn net.Conn,src string,dst string,context string) bool {
@@ -226,23 +266,27 @@ func simulation() {
 				fmt.Println("o is adminUser login")
 				fmt.Println("q is quit command")
 				fmt.Println("m is show all online user")
-
+				fmt.Println("b is match mode")
+				fmt.Println("v is order")
 			}else if op == string("o") {
-				signUp(conn,"wang","123")
 
+				signUp(conn,"wang","123")
 				login(conn,"wang","123")
 
 			}else if op==string("m"){
 				sendAdmin(conn)
 			}else if op==string("n"){
 				fmt.Println("send msg to an existed user")
-			}
+			}else if op == string("b") {
 
+				match(conn,"wang",1)
+			}else if op==string("v"){
+				order(conn,"wang",12)
+			}
 		}
 	}
 
 }
-
 func main() {
 	simulation()
 	//go simulation()

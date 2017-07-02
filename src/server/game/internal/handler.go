@@ -24,7 +24,7 @@ import (
 ///
 
 type matchInfo struct {
-	matchQueue []msg.Match `json:"matchInfo"`
+	MatchQueue []msg.Match `json:"matchInfo"`
 }
 
 var matchMsg matchInfo
@@ -127,20 +127,23 @@ func handleRight(args []interface{})  {
 func handleMatch(args []interface{})  {
 	///处理当前匹配多人模式的消息
 
-	m,ok:=args[0].(msg.Match)
+	m,ok:=args[0].(*msg.Match)
+	log.Debug("ok")
 	if ok {
 		log.Debug("multi-player match game %v",m)
 	}
 
 	///添加到匹配的队列中去
+	log.Debug("match %v\n",m)
 
 	///存放匹配信息
-	matchMsg.matchQueue = append(matchMsg.matchQueue,m)
+	tmp:=msg.Match{Name:m.Name,Car:m.Car}
+	matchMsg.MatchQueue = append(matchMsg.MatchQueue,tmp)
 
 	///如果当前在匹配队列的人数大于等于2
-	if len(matchMsg.matchQueue)>=2 {
+	if len(matchMsg.MatchQueue)>=2 {
 		///向其他的用户发送广播
-		for _,x:=range matchMsg.matchQueue{
+		for _,x:=range matchMsg.MatchQueue{
 			tmp:=login.UserAgent[x.Name]
 			///向客户端发送匹配数组信息
 			tmp.WriteMsg(&matchMsg)
@@ -151,7 +154,7 @@ func handleMatch(args []interface{})  {
 }
 
 func handleOrder(args []interface{})  {
-	m,ok:=args[0].(msg.Order)
+	m,ok:=args[0].(*msg.Order)
 	if ok {
 		log.Debug("Order ")
 	}
