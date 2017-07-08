@@ -165,7 +165,7 @@ func handleOrder(args []interface{})  {
 	handleBroadcast(m)
 }
 func handleFinish(args []interface{})  {
-	m,ok:=args[0].(*msg.Order)
+	m,ok:=args[0].(*msg.Finished)
 	if ok {
 		log.Debug("Finish %v",m)
 	}
