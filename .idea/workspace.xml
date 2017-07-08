@@ -14,11 +14,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="msg.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="msg.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/msg/msg.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="123" column="29" lean-forward="true" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
+            <state relative-caret-position="1666">
+              <caret line="123" column="7" lean-forward="false" selection-start-line="123" selection-start-column="7" selection-end-line="123" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -54,16 +54,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserData.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/msg/UserData.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/main.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handler.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="handler.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/game/internal/handler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1199">
-              <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="182">
+              <caret line="167" column="32" lean-forward="false" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
               <folding>
                 <element signature="e#18#135#0" expanded="true" />
                 <element signature="n#!!block;n#handleOk#0" expanded="false" />
@@ -108,11 +98,21 @@
       <file leaf-file-name="chanrpc.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/game/internal/chanrpc.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="67">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#18#61#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reader.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/gamedata/reader.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -928,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/gamedata/reader.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README_CN.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1070,20 +1063,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/game/internal/chanrpc.go">
+    <entry file="file://$PROJECT_DIR$/src/server/msg/msg.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <element signature="e#18#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/game/external.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="1666">
+          <caret line="123" column="7" lean-forward="false" selection-start-line="123" selection-start-column="7" selection-end-line="123" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1096,6 +1079,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/game/external.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/game/internal/module.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1104,10 +1095,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/gamedata/reader.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/game/internal/chanrpc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/game/internal/handler.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1199">
-          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state relative-caret-position="182">
+          <caret line="167" column="32" lean-forward="false" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
           <folding>
             <element signature="e#18#135#0" expanded="true" />
             <element signature="n#!!block;n#handleOk#0" expanded="false" />
@@ -1116,14 +1125,6 @@
             <element signature="n#!!block;n#handleAdmin#0" expanded="false" />
             <element signature="n#!!block;n#handleUserMsg#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/msg/msg.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="123" column="29" lean-forward="true" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
