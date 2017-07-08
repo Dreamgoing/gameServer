@@ -137,19 +137,20 @@ func handleMatch(args []interface{})  {
 	log.Debug("match %v\n",m)
 
 	///存放匹配信息
-	tmp:=msg.Match{Name:m.Name,Car:m.Car}
-	matchMsg.MatchQueue = append(matchMsg.MatchQueue,tmp)
-
-	///如果当前在匹配队列的人数大于等于2
-	if len(matchMsg.MatchQueue)>=2 {
-		///向其他的用户发送广播
-		for _,x:=range matchMsg.MatchQueue{
-			tmp:=login.UserAgent[x.Name]
-			///向客户端发送匹配数组信息
-			tmp.WriteMsg(&matchMsg)
-
-		}
-	}
+	tmp:=&msg.Match{Name:m.Name,Car:m.Car}
+	//matchMsg.MatchQueue = append(matchMsg.MatchQueue,tmp)
+	//
+	/////如果当前在匹配队列的人数大于等于2
+	//if len(matchMsg.MatchQueue)>=2 {
+	//	///向其他的用户发送广播
+	//	for _,x:=range matchMsg.MatchQueue{
+	//		tmp:=login.UserAgent[x.Name]
+	//		///向客户端发送匹配数组信息
+	//		tmp.WriteMsg(&matchMsg)
+	//
+	//	}
+	//}
+	handleBroadcast(tmp)
 
 }
 
