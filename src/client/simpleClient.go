@@ -193,7 +193,7 @@ func signUp(conn net.Conn,name,password string)bool  {
 
 
 func simulation() {
-	conn:=connect("tcp","127.0.0.1:3389")
+	conn:=connect("tcp","47.93.17.101:3389")
 
 	defer conn.Close()
 

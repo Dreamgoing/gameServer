@@ -156,7 +156,7 @@ func handleMatch(args []interface{})  {
 func handleOrder(args []interface{})  {
 	m,ok:=args[0].(*msg.Order)
 	if ok {
-		log.Debug("Order ")
+		log.Debug("Order %v",m)
 	}
 
 	///广播消息
