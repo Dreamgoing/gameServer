@@ -90,7 +90,7 @@ type Match struct {
 
 type Order struct {
 	Name string `json:"name"`
-	Val string `json:"val"`
+	Val int `json:"val"`
 }
 
 ///测试的向前开车消息
