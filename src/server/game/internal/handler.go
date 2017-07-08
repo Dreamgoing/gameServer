@@ -39,6 +39,7 @@ func init() {
 	handler(&msg.Match{},handleMatch)
 	handler(&msg.Admin{},handleAdmin)
 	handler(&msg.Order{},handleOrder)
+	handler(&msg.Finish{},handleFinish)
 }
 
 func handler(m interface{},h interface{})  {
@@ -158,6 +159,15 @@ func handleOrder(args []interface{})  {
 	m,ok:=args[0].(*msg.Order)
 	if ok {
 		log.Debug("Order %v",m)
+	}
+
+	///广播消息
+	handleBroadcast(m)
+}
+func handleFinish(args []interface{})  {
+	m,ok:=args[0].(*msg.Order)
+	if ok {
+		log.Debug("Finish %v",m)
 	}
 
 	///广播消息

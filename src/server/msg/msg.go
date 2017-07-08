@@ -28,6 +28,7 @@ func init() {
 	Processor.Register(&UserMsg{})
 	Processor.Register(&MatchMode{})
 	Processor.Register(&Order{})
+	Processor.Register(&Finish{})
 }
 
 ///结构体定义了一个JSON消息格式
@@ -118,6 +119,10 @@ type UserMsg struct {
 	Context string `json:"context"`
 }
 
+type Finish struct {
+	Name string `json:"name"`
+	Time int    `json:"time"`
+}
 ///定义了具体的命令
 const (
 	UpCom = iota

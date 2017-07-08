@@ -39,4 +39,6 @@ func init() {
 	msg.Processor.SetRouter(&msg.MatchMode{},game.ChanRPC)
 
 	msg.Processor.SetRouter(&msg.Order{},game.ChanRPC)
+
+	msg.Processor.SetRouter(&msg.Finish{},game.ChanRPC)
 }
