@@ -39,7 +39,7 @@ func init() {
 	handler(&msg.Match{},handleMatch)
 	handler(&msg.Admin{},handleAdmin)
 	handler(&msg.Order{},handleOrder)
-	handler(&msg.Finish{},handleFinish)
+	handler(&msg.Finished{},handleFinish)
 }
 
 func handler(m interface{},h interface{})  {

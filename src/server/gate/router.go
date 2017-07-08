@@ -40,5 +40,5 @@ func init() {
 
 	msg.Processor.SetRouter(&msg.Order{},game.ChanRPC)
 
-	msg.Processor.SetRouter(&msg.Finish{},game.ChanRPC)
+	msg.Processor.SetRouter(&msg.Finished{},game.ChanRPC)
 }
